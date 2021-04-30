@@ -22,28 +22,28 @@ jobs:
       - name: Build Da Aplicação
         run: docker-compose up -d app
         
-  Back-End Testes:
+  Back-End-Testes:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Testes do Back-End(API)
         run: docker-compose run api python3 manage.py test
         
-  Front-End Testes:
+  Front-End-Testes:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Testes do Front-End(Cliente)
         run: docker-compose run app bash -c "yarn && yarn test:unit"
         
-  Back-End Stylesheet:
+  Back-End-Stylesheet:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Stylesheet do Back-End(API)
         run: docker-compose run api bash -c "pylint *.py"
         
-  Front-End Stylesheet:
+  Front-End-Stylesheet:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
