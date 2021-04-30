@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#typescipt: disable=C0415
+#pylint: disable=C0415
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
