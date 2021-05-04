@@ -47,3 +47,35 @@ jobs:
       - uses: actions/checkout@v2
       - name: Stylesheet do Front-end(Cliente)
         run: docker-compose run app bash -c "yarn && yarn lint"
+        
+  Back-End-Test-Coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cobertura de código do Back-End
+        run: |
+           docker-compose run api bash -c "coverage run --source='.' manage.py test"
+           docker-compose run api bash -c "coverage xml"
+             
+      - name: CodeCov Back-End
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          files: ./api/coverage.xml
+          flags: Back-End-Cov
+          fail_ci_if_error: true
+             
+  Front-End-Test-Coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cobertura de código do Front-End
+        run: docker-compose run app bash -c "yarn && yarn test:unit:ci:coverage"
+             
+      - name: CodeCov Front-End
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          files: ./client/test/jest/coverage/coverage-final.json
+          flags: Front-End-Cov
+          fail_ci_if_error: true
