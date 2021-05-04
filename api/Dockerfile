@@ -1,7 +1,7 @@
 #VERSION
 FROM python:3.9.4
 #INSTALA DEPENDENCIAS
-RUN pip install pylint psycopg2 django-cors-headers djangorestframework
+RUN pip install pylint coverage psycopg2 django-cors-headers djangorestframework
 #PASTA BASE
 WORKDIR /api
 #COPIA O CONTEUDO DA API PARA A PASTA BASE
