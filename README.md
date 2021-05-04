@@ -1,4 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/60289d9b3f94124a3fea/maintainability)](https://codeclimate.com/github/rafaelteodosio/Trabalho-Individual-2020-2/maintainability)
+[![codecov](https://codecov.io/gh/rafaelteodosio/Trabalho-Individual-2020-2/branch/master/graph/badge.svg?token=N504SKYU14)](https://codecov.io/gh/rafaelteodosio/Trabalho-Individual-2020-2)
 # Trabalho Individual 2020.2
 
 A Gestão de Configuração de Software é parte fundamental no curso de GCES, e dominar os conhecimentos de configuração de ambiente, containerização, virtualização, integração e deploy contínuo tem se tornado cada vez mais necessário para ingressar no mercado de trabalho.
